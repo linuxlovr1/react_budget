@@ -16,6 +16,7 @@ addBill(e) {
       dataType: 'JSON'
     }).success( bill => {
       this.props.addBill(bill);
+      this.changeTotal(total);
     }).error( error => {
       console.log(error);
     }).complete( () => {
@@ -26,15 +27,13 @@ addBill(e) {
 
   render() {
     return(
-      <div className="row">
-        <div className="col s12 m4">
-          <h4>Add Bill</h4>
-          <form onSubmit={this.addBill} >
-            <input placeholder="Bill Name" ref="name" required={true} />
-            <input placeholder="Bill Total" ref="total" required={true} />
-            <button className="btn">Add</button>
-          </form>
-        </div>
+      <div className="col s12 m6">
+        <h5>Add Bill</h5>
+        <form onSubmit={this.addBill} >
+          <input placeholder="Bill Name" ref="name" required={true} />
+          <input placeholder="$0.00" ref="total" required={true} />
+          <button className="btn green darken-1">Add</button>
+        </form>
       </div>
     );
   }

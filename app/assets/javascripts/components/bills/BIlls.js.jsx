@@ -26,14 +26,20 @@ class Bills extends React.Component {
 
   render() {
     let bills = this.state.bills.map( bill => {
-      return(<Bill key={`bill-${bill.id}`} {...bill} deleteBill={this.deleteBill} />
+    return(
+        <Bill key={`bill-${bill.id}`} {...bill} deleteBill={this.deleteBill} />
       );
     });
     return(
+      <div>
       <div className="row">
         <NewBill addBill={this.addBill} />
-        <h2>BILLSNIGGA</h2>
+        <Monies />
+      </div>
+      <div className="row">
+        <h4>Bills</h4>
         {bills}
+      </div>
       </div>
     );
   }

@@ -14,10 +14,10 @@ class Bill extends React.Component {
         <div className='card green'>
           <div className='card-content white-text'>
             <span className='card-title'>{this.props.name}</span>
-            <p>{ this.props.total }</p>
+            <p>$ { this.props.total }</p>
           </div>
           <div className='card-action center'>
-            <button onClick={ () => this.props.delete(this.props.id)} className='btn red'>Delete</button>
+            <button onClick={ () => this.props.deleteBill(this.props.id)} className='btn red'>Delete</button>
           </div>
         </div>
       </div>
