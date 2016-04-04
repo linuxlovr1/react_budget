@@ -17,7 +17,7 @@ class Bill extends React.Component {
             <p>$ { this.props.total }</p>
           </div>
           <div className='card-action center'>
-            <button onClick={ () => this.props.deleteBill(this.props.id)} className='btn red'>Delete</button>
+            <a href="/" onClick={ () => this.props.deleteBill(this.props.id)} className='btn red'>Delete</a>
           </div>
         </div>
       </div>

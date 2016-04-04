@@ -4,6 +4,7 @@ class Bills extends React.Component {
     this.state = { bills: this.props.bills };
     this.addBill = this.addBill.bind(this);
     this.deleteBill = this.deleteBill.bind(this);
+    this.updateTotal = this.updateTotal.bind(this);
   }
 
   deleteBill(id, bill) {
@@ -24,6 +25,11 @@ class Bills extends React.Component {
     this.setState({ bills: [bill, ...this.state.bills] });
   }
 
+  updateTotal() {
+    debugger
+    this.forceUpdate();
+  }
+
   render() {
     let bills = this.state.bills.map( bill => {
     return(
@@ -33,7 +39,7 @@ class Bills extends React.Component {
     return(
       <div>
       <div className="row">
-        <NewBill addBill={this.addBill} />
+        <NewBill updateTotal={this.updateTotal} addBill={this.addBill} />
         <Monies />
       </div>
       <div className="row">

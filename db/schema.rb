@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20160401204237) do
 
   create_table "bills", force: :cascade do |t|
     t.string   "name",       null: false
-    t.integer  "total",      null: false
+    t.decimal  "total",      null: false
     t.integer  "money_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
